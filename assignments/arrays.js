@@ -59,6 +59,8 @@ let inventory = [
 
 
 
+
+
 // Example 1 for loop:
 
 // const arr = ['a', 'b', 'c', 'd'];
@@ -130,22 +132,19 @@ console.log(carYears);
 // let oldCars = [];
 // console.log();
 
-let carYears = [];
+let oldCars = [];
 for (i = 0; i < inventory.length; i++) {
-  carYears.push(inventory[i].car_year);
+  if (inventory[i].car_year < 2000) {
+    oldCars.push(inventory[i]);
+  }
 }
-
-let oldCars = carYears.filter(function(item){         // make sure to flter array into a new array and call that array to view condition
-  return item < 2000;
-})
-
 console.log(oldCars.length);
 
 
 
 
 // ==== Challenge 6 ====
-// // A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
+// A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 // let BMWAndAudi = [];
 // console.log();
 
@@ -156,16 +155,4 @@ for (i = 0; i < inventory.length; i++) {
   }
 }
 console.log(carTypes);
-
-// FILTER BY OBJECT PROPERTY 
-// let carTypes = [];
-// for (i = 0; i < inventory.length; i++) {
-//   carTypes.push(inventory[i].car_make);
-// }
-
-// FILTER BY OBJET KEY
-// let BMWAndAudi = carTypes.filter(function (item) {
-//   return item === "BMW" || item === "Audi";
-// })
-// console.log(BMWAndAudi);
 
