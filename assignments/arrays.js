@@ -61,6 +61,11 @@ let inventory = [
 
 
 
+
+
+
+
+
 // Example 1 for loop:
 
 // const arr = ['a', 'b', 'c', 'd'];
@@ -101,18 +106,24 @@ console.log(`${inventory[inventory.length - 1].car_make} + ${inventory[inventory
 // let carModelsSorted = [];
 // console.log();
 
+// Pushing objecy properties into an array
 let carModel = [];
 for (let i = 0; i < inventory.length; i++) {
   carModel.push(inventory[i].car_model);
 }
+
+// Converting all indexes to lowercase to be alphabetized 
+carModel.forEach(function (car) {
+  carModel.push(car.toLowerCase());
+})
 console.log(carModel);
 
+// Alphabetize 
 let carModelIsSorted = [];
 for (let i = 0; i < carModel.length; i++) {
   carModelIsSorted.push(carModel.sort());
 }
 console.log(carModelIsSorted);
-
 
 
 // ==== Challenge 4 ====
